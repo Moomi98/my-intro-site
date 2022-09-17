@@ -1,9 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
+import GlobalStyle from "./styles/global";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+    </>
+  );
 }
 
 export default App;
