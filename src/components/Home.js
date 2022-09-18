@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { homeImage1 } from "../assets/images/index";
+import { TypeAnimation } from "react-type-animation";
+
 const Container = styled.section`
   position: absolute;
   width: 100%;
@@ -57,7 +59,19 @@ const Home = () => {
       <HomeLayout>
         <IntroLayout>
           <H4Orange>안녕하세요!</H4Orange>
-          <H1White>주니어 개발자</H1White>
+          <TypeAnimation
+            sequence={[
+              "주니어 개발자",
+              3000,
+              "프론트엔드 개발자",
+              3000,
+              () => {},
+            ]}
+            wrapper="h1"
+            cursor={true}
+            repeat={Infinity}
+            style={{ fontSize: "60px", fontWeight: "bold", color: "white" }}
+          />
           <FlexTextLayout>
             <H1Orange>김정현</H1Orange>
             <H1White>입니다.</H1White>
