@@ -5,6 +5,8 @@ const Container = styled.div`
   height: 70px;
   background-color: black;
   position: fixed;
+  top: 0;
+  z-index: 10;
 `;
 
 const HeaderLayout = styled.div`

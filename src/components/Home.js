@@ -3,9 +3,9 @@ import { homeImage1 } from "../assets/images/index";
 import { TypeAnimation } from "react-type-animation";
 
 const Container = styled.section`
-  position: absolute;
   width: 100%;
-  top: 72px;
+  margin-top: 70px;
+  padding-top: 50px;
 `;
 
 const HomeLayout = styled.div`

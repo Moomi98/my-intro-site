@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  html, body {
+  html, body, #root {
     background-color: black;
     height: 100%;
   }
