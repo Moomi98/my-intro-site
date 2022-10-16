@@ -34,6 +34,16 @@ const ProjectDetailLayout = styled.div`
   animation: ${hoverEnter} 0.2s linear forwards;
 `;
 
+const ProjectTitle = styled.p`
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  z-index: 100;
+`;
+
 const ShortProjectCard = ({ image }) => {
   const [hover, setHover] = useState(false);
   return (
@@ -42,7 +52,12 @@ const ShortProjectCard = ({ image }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {hover ? <ProjectDetailLayout /> : null}
+      {hover ? (
+        <>
+          <ProjectDetailLayout />
+          <ProjectTitle>Kodeal</ProjectTitle>
+        </>
+      ) : null}
     </Container>
   );
 };
