@@ -5,6 +5,7 @@ import About from "./components/About";
 import GlobalStyle from "./styles/global";
 import Resume from "./components/Resume";
 import Projects from "./components/Projects/Projects";
+import Skills from "./components/Skills/Skills";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Home />
       <About />
+      <Skills />
       <Resume />
       <Projects />
     </>
