@@ -86,12 +86,17 @@ const ProjectDetailLayout = styled.div`
     `};
 `;
 
-const ProjectModal = ({ close }) => {
+const ProjectName = styled.h2`
+  font-weight: bold;
+  font-size: 40px;
+`;
+
+const ProjectModal = (props) => {
   const [closeAnimation, setCloseAnimation] = useState(false);
 
   useEffect(() => {
     if (closeAnimation) {
-      setTimeout(() => close(), 500);
+      setTimeout(() => props.close(), 500);
     }
   }, [closeAnimation]);
 
@@ -105,6 +110,7 @@ const ProjectModal = ({ close }) => {
             setCloseAnimation(true);
           }}
         />
+        <ProjectName>{props.name}</ProjectName>
       </ProjectDetailLayout>
     </Container>
   );

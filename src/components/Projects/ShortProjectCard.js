@@ -46,7 +46,7 @@ const ProjectTitle = styled.p`
   z-index: 100;
 `;
 
-const ShortProjectCard = ({ image }) => {
+const ShortProjectCard = (props) => {
   const [hover, setHover] = useState(false);
   const [modal, setModal] = useState(false);
   const scrollRef = useScrollEvent(0.2);
@@ -59,7 +59,7 @@ const ShortProjectCard = ({ image }) => {
     <>
       <Container
         {...scrollRef}
-        image={image}
+        image={props.image}
         onClick={() => setModal(true)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

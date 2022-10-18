@@ -49,7 +49,7 @@ const ProjectTitle = styled.p`
   z-index: 100;
 `;
 
-const LongProjectCard = ({ image }) => {
+const LongProjectCard = (props) => {
   const [hover, setHover] = useState(false);
   const [modal, setModal] = useState(false);
   const scrollRef = useScrollEvent(0.2);
@@ -62,7 +62,7 @@ const LongProjectCard = ({ image }) => {
     <>
       <Container
         {...scrollRef}
-        image={image}
+        image={props.image}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
