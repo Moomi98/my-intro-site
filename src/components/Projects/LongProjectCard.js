@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
+import useScrollEvent from "../../hooks/useScrollEvent";
 
 const hoverEnter = keyframes`
     from{
@@ -47,9 +48,11 @@ const ProjectTitle = styled.p`
 
 const LongProjectCard = ({ image }) => {
   const [hover, setHover] = useState(false);
+  const scrollRef = useScrollEvent(0.2);
 
   return (
     <Container
+      {...scrollRef}
       image={image}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

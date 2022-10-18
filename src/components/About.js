@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { homeImage1 } from "../assets/images/index";
+import useScrollEvent from "../hooks/useScrollEvent";
 
 const Container = styled.section`
   width: 75%;
@@ -63,16 +64,23 @@ const ElementText = styled.p`
 `;
 
 const About = () => {
+  const scrollRef = {
+    0: useScrollEvent(0.2),
+    1: useScrollEvent(0.2),
+    2: useScrollEvent(0.2),
+    3: useScrollEvent(0.2),
+  };
+
   return (
     <Container>
-      <ImageLayout src={homeImage1} />
+      <ImageLayout src={homeImage1} {...scrollRef[0]} />
       <IntroLayout>
-        <Title>About Me</Title>
-        <Subtitle>
+        <Title {...scrollRef[1]}>About Me</Title>
+        <Subtitle {...scrollRef[2]}>
           A small river named Duden flows by their place and supplies it with
           the necessary regelialia.
         </Subtitle>
-        <TextLayout>
+        <TextLayout {...scrollRef[3]}>
           <FlexTextLayout>
             <ElementText>이름 :</ElementText>
             <ContentText>김정현</ContentText>

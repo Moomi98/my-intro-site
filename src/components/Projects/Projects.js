@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { projectImage1, projectImage2 } from "../../assets/images";
 import ShortProjectCard from "./ShortProjectCard";
 import LongProjectCard from "./LongProjectCard";
+import useScrollEvent from "../../hooks/useScrollEvent";
 const Container = styled.section`
   width: 75%;
   height: 100%;
@@ -34,10 +35,16 @@ const ProjectsLayout = styled.div`
 `;
 
 const Projects = () => {
+  const scrollRef = {
+    0: useScrollEvent(0.2),
+    1: useScrollEvent(0.2),
+  };
   return (
     <Container>
-      <Title>Projects</Title>
-      <Subtitle>진행했거나 진행 중인 프로젝트를 소개합니다.</Subtitle>
+      <Title {...scrollRef[0]}>Projects</Title>
+      <Subtitle {...scrollRef[1]}>
+        진행했거나 진행 중인 프로젝트를 소개합니다.
+      </Subtitle>
       <ProjectsLayout>
         <ShortProjectCard image={projectImage1} />
         <LongProjectCard image={projectImage2} />

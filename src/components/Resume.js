@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import useScrollEvent from "../hooks/useScrollEvent";
 const Container = styled.section`
   width: 75%;
   height: 100%;
@@ -74,14 +74,22 @@ const Content = styled.p`
 `;
 
 const Resume = () => {
+  const scrollRef = {
+    0: useScrollEvent(0.2),
+    1: useScrollEvent(0.2),
+    2: useScrollEvent(0.2),
+    3: useScrollEvent(0.2),
+    4: useScrollEvent(0.2),
+    5: useScrollEvent(0.2),
+  };
   return (
     <Container>
-      <Title>Resume</Title>
-      <Subtitle>
+      <Title {...scrollRef[0]}>Resume</Title>
+      <Subtitle {...scrollRef[1]}>
         성장하는 개발자가 되기 위해 다양한 경험을 진행했습니다.
       </Subtitle>
       <ResumeLayout>
-        <ResumeWrapper>
+        <ResumeWrapper {...scrollRef[2]}>
           <Date>2022.08.01 ~ 2022.08.26</Date>
           <ResumeWrapH2>Frontend Intern</ResumeWrapH2>
           <Position>Naver</Position>
@@ -91,7 +99,7 @@ const Resume = () => {
           </Content>
           <Content>사용 기술 : Javascript, Vue, Vuex</Content>
         </ResumeWrapper>
-        <ResumeWrapper>
+        <ResumeWrapper {...scrollRef[3]}>
           <Date>2021.12.20- ~ 2022.02.16</Date>
           <ResumeWrapH2>Frontend Intern</ResumeWrapH2>
           <Position>Frigatebird</Position>
@@ -101,10 +109,11 @@ const Resume = () => {
           </Content>
           <Content>사용 기술 : Javscript, React, Redux</Content>
         </ResumeWrapper>
-        <ResumeWrapperNotUpdated>
+
+        <ResumeWrapperNotUpdated {...scrollRef[4]}>
           <ResumeWrapH2>To Be Updated...</ResumeWrapH2>
         </ResumeWrapperNotUpdated>
-        <ResumeWrapperNotUpdated>
+        <ResumeWrapperNotUpdated {...scrollRef[5]}>
           <ResumeWrapH2>To Be Updated...</ResumeWrapH2>
         </ResumeWrapperNotUpdated>
       </ResumeLayout>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Expbar from "./Expbar";
-
+import useScrollEvent from "../../hooks/useScrollEvent";
 const Container = styled.section`
   width: 50%;
   height: 100%;
@@ -52,27 +52,34 @@ const SkillName = styled.p`
   line-height: 40px;
 `;
 const Skills = () => {
+  const scrollRef = {
+    0: useScrollEvent(0.2),
+    1: useScrollEvent(0.2),
+    2: useScrollEvent(0.2),
+    3: useScrollEvent(0.2),
+    4: useScrollEvent(0.2),
+  };
   return (
     <Container>
       <TitleLayout>
-        <Title>Skills</Title>
-        <Subtitle>보유하고 있는 기술 스택입니다.</Subtitle>
+        <Title {...scrollRef[0]}>Skills</Title>
+        <Subtitle {...scrollRef[1]}>보유하고 있는 기술 스택입니다.</Subtitle>
       </TitleLayout>
 
       <SkillsetLayout>
-        <SkillDetailLayout>
+        <SkillDetailLayout {...scrollRef[2]}>
           <SkillName>Javascript</SkillName>
           <Expbar rate={80} />
         </SkillDetailLayout>
-        <SkillDetailLayout>
+        <SkillDetailLayout {...scrollRef[3]}>
           <SkillName>React</SkillName>
           <Expbar rate={70} />
         </SkillDetailLayout>
-        <SkillDetailLayout>
+        <SkillDetailLayout {...scrollRef[4]}>
           <SkillName>Typescript</SkillName>
           <Expbar rate={50} />
         </SkillDetailLayout>
-        <SkillDetailLayout>
+        <SkillDetailLayout {...scrollRef[5]}>
           <SkillName>Next.js</SkillName>
           <Expbar rate={20} />
         </SkillDetailLayout>

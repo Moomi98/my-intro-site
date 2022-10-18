@@ -1,6 +1,6 @@
 import { useRef, useCallback, useEffect } from "react";
 
-const useScrollEvent = (a) => {
+const useScrollEvent = (timing) => {
   const dom = useRef();
 
   const handleScroll = useCallback(([entry]) => {
@@ -21,12 +21,12 @@ const useScrollEvent = (a) => {
     const { current } = dom;
 
     if (current) {
-      observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
+      observer = new IntersectionObserver(handleScroll, { threshold: timing });
       observer.observe(current);
 
       return () => observer && observer.disconnect();
     }
-  }, [handleScroll]);
+  }, [handleScroll, timing]);
 
   return {
     ref: dom,
