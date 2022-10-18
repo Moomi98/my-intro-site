@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { useState } from "react";
+import styled, { keyframes } from "styled-components";
+import useScrollEvent from "../../hooks/useScrollEvent";
 const Container = styled.div`
   display: flex;
   gap: 7px;
@@ -13,19 +13,23 @@ const ExpbarLayout = styled.div`
 `;
 
 const Expbar = ({ rate }) => {
+  const barRefs = useScrollEvent();
   const getExpRate = () => {
     const bars = [];
+    let index = 0;
 
     for (let i = 0; i < rate; i += 5) {
       bars.push(<ExpbarLayout color={"#ffbd39"} />);
+      index += 1;
     }
 
     for (let i = 0; i < 100 - rate; i += 5) {
       bars.push(<ExpbarLayout color={"#aaa"} />);
+      index += 1;
     }
 
     return bars;
   };
-  return <Container>{getExpRate()}</Container>;
+  return <Container {...barRefs}>{getExpRate()}</Container>;
 };
 export default Expbar;
