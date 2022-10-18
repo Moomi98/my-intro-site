@@ -66,6 +66,7 @@ const Container = styled.div`
 const ProjectDetailLayout = styled.div`
   width: 90%;
   height: 90%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -98,6 +99,7 @@ const ProjectModal = ({ close }) => {
     <Container animation={closeAnimation}>
       <ProjectDetailLayout animation={closeAnimation}>
         <IoChevronBackOutline
+          style={{ cursor: "pointer" }}
           size={30}
           onClick={() => {
             setCloseAnimation(true);

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import useScrollEvent from "../../hooks/useScrollEvent";
+import ProjectModal from "../ProjectModal";
 const hoverEnter = keyframes`
     from{
         background-color: "transparent";
@@ -30,6 +31,7 @@ const ProjectDetailLayout = styled.div`
   background-color: #f7f98a;
   position: absolute;
   z-index: 10;
+  cursor: pointer;
   opacity: 0.6;
   animation: ${hoverEnter} 0.2s linear forwards;
 `;
@@ -46,21 +48,31 @@ const ProjectTitle = styled.p`
 
 const ShortProjectCard = ({ image }) => {
   const [hover, setHover] = useState(false);
+  const [modal, setModal] = useState(false);
   const scrollRef = useScrollEvent(0.2);
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
   return (
-    <Container
-      {...scrollRef}
-      image={image}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      {hover ? (
-        <>
-          <ProjectDetailLayout />
-          <ProjectTitle>Kodeal</ProjectTitle>
-        </>
-      ) : null}
-    </Container>
+    <>
+      <Container
+        {...scrollRef}
+        image={image}
+        onClick={() => setModal(true)}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        {hover ? (
+          <>
+            <ProjectDetailLayout />
+            <ProjectTitle>Kodeal</ProjectTitle>
+          </>
+        ) : null}
+      </Container>
+      {modal ? <ProjectModal close={closeModal} /> : null}
+    </>
   );
 };
 
