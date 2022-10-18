@@ -47,7 +47,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 90%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   top: 0;
@@ -64,7 +64,7 @@ const Container = styled.div`
 `;
 
 const ProjectDetailLayout = styled.div`
-  width: 90%;
+  width: 50%;
   height: 90%;
   padding: 10px;
   display: flex;
