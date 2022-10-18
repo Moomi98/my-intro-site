@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
 import useScrollEvent from "../../hooks/useScrollEvent";
+import ProjectModal from "../ProjectModal";
 
 const hoverEnter = keyframes`
     from{
@@ -24,6 +25,7 @@ const Container = styled.div`
   background-image: ${(props) => `url(${props.image})`};
   background-color: ${(props) => props.backgroundColor || "none"};
   position: relative;
+  cursor: pointer;
 `;
 
 const ProjectDetailLayout = styled.div`
@@ -34,6 +36,7 @@ const ProjectDetailLayout = styled.div`
   z-index: 10;
   opacity: 0.6;
   animation: ${hoverEnter} 0.2s linear forwards;
+  cursor: pointer;
 `;
 
 const ProjectTitle = styled.p`
@@ -48,22 +51,30 @@ const ProjectTitle = styled.p`
 
 const LongProjectCard = ({ image }) => {
   const [hover, setHover] = useState(false);
+  const [modal, setModal] = useState(false);
   const scrollRef = useScrollEvent(0.2);
 
+  const closeModal = () => {
+    setModal(false);
+  };
+
   return (
-    <Container
-      {...scrollRef}
-      image={image}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      {hover ? (
-        <>
-          <ProjectDetailLayout />
-          <ProjectTitle>Peachseoga</ProjectTitle>
-        </>
-      ) : null}
-    </Container>
+    <>
+      <Container
+        {...scrollRef}
+        image={image}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        {hover ? (
+          <>
+            <ProjectDetailLayout onClick={() => setModal(true)} />
+            <ProjectTitle>Peachseoga</ProjectTitle>
+          </>
+        ) : null}
+      </Container>
+      {modal ? <ProjectModal close={closeModal} /> : null}
+    </>
   );
 };
 
