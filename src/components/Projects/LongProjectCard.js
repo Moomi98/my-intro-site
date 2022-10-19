@@ -73,7 +73,9 @@ const LongProjectCard = (props) => {
           </>
         ) : null}
       </Container>
-      {modal ? <ProjectModal close={closeModal} /> : null}
+      {modal ? (
+        <ProjectModal close={closeModal} content={props.content} />
+      ) : null}
     </>
   );
 };

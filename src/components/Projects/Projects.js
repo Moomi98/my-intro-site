@@ -3,6 +3,7 @@ import { projectImage1, projectImage2 } from "../../assets/images";
 import ShortProjectCard from "./ShortProjectCard";
 import LongProjectCard from "./LongProjectCard";
 import useScrollEvent from "../../hooks/useScrollEvent";
+import { Kodeal, Peachseoga } from "../../constants/Projects";
 const Container = styled.section`
   width: 75%;
   height: 100%;
@@ -46,8 +47,8 @@ const Projects = () => {
         진행했거나 진행 중인 프로젝트를 소개합니다.
       </Subtitle>
       <ProjectsLayout>
-        <ShortProjectCard image={projectImage1} />
-        <LongProjectCard image={projectImage2} />
+        <ShortProjectCard image={projectImage1} content={Kodeal} />
+        <LongProjectCard image={projectImage2} content={Peachseoga} />
       </ProjectsLayout>
     </Container>
   );
