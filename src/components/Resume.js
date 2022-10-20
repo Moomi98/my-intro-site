@@ -38,6 +38,11 @@ const ResumeWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 5px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0px 0px 2px 5px rgba(333, 123, 125);
+  }
 `;
 
 const ResumeWrapperNotUpdated = styled.div`
