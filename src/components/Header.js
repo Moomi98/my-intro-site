@@ -30,6 +30,7 @@ const Menu = styled.ul`
   font-size: 18px;
   font-weight: 600;
   color: white;
+  cursor: pointer;
 `;
 
 const Logo = styled.p`
@@ -40,18 +41,17 @@ const Logo = styled.p`
   text-align: center;
 `;
 
-const Header = () => {
+const Header = ({ scrollFunction }) => {
+  const menuList = ["Home", "About", "Skills", "Resume", "Projects"];
+
   return (
     <Container>
       <HeaderLayout>
         <Logo>김정현</Logo>
         <MenuLayout>
-          <Menu>Home</Menu>
-          <Menu>About</Menu>
-          <Menu>Skills</Menu>
-          <Menu>Resume</Menu>
-          <Menu>Projects</Menu>
-          <Menu>Contact</Menu>
+          {menuList.map((menu, index) => (
+            <Menu onClick={scrollFunction[index]}>{menu}</Menu>
+          ))}
         </MenuLayout>
       </HeaderLayout>
     </Container>

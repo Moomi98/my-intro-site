@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 import { homeImage1 } from "../assets/images/index";
 import useScrollEvent from "../hooks/useScrollEvent";
@@ -63,7 +64,7 @@ const ElementText = styled.p`
   min-width: 100px;
 `;
 
-const About = () => {
+const About = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
     1: useScrollEvent(0.2),
@@ -72,7 +73,7 @@ const About = () => {
   };
 
   return (
-    <Container>
+    <Container ref={ref}>
       <ImageLayout src={homeImage1} {...scrollRef[0]} />
       <IntroLayout>
         <Title {...scrollRef[1]}>About Me</Title>
@@ -101,6 +102,6 @@ const About = () => {
       </IntroLayout>
     </Container>
   );
-};
+});
 
 export default About;

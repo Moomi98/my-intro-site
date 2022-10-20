@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 import useScrollEvent from "../hooks/useScrollEvent";
 const Container = styled.section`
@@ -73,7 +74,7 @@ const Content = styled.p`
   color: #999999;
 `;
 
-const Resume = () => {
+const Resume = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
     1: useScrollEvent(0.2),
@@ -83,7 +84,7 @@ const Resume = () => {
     5: useScrollEvent(0.2),
   };
   return (
-    <Container>
+    <Container ref={ref}>
       <Title {...scrollRef[0]}>Resume</Title>
       <Subtitle {...scrollRef[1]}>
         성장하는 개발자가 되기 위해 다양한 경험을 진행했습니다.
@@ -119,6 +120,6 @@ const Resume = () => {
       </ResumeLayout>
     </Container>
   );
-};
+});
 
 export default Resume;

@@ -4,6 +4,7 @@ import ShortProjectCard from "./ShortProjectCard";
 import LongProjectCard from "./LongProjectCard";
 import useScrollEvent from "../../hooks/useScrollEvent";
 import { Kodeal, Peachseoga } from "../../constants/Projects";
+import { forwardRef } from "react";
 const Container = styled.section`
   width: 75%;
   height: 100%;
@@ -30,18 +31,18 @@ const ProjectsLayout = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 30px;
   height: 100%;
 `;
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
     1: useScrollEvent(0.2),
   };
   return (
-    <Container>
+    <Container ref={ref}>
       <Title {...scrollRef[0]}>Projects</Title>
       <Subtitle {...scrollRef[1]}>
         진행했거나 진행 중인 프로젝트를 소개합니다.
@@ -49,9 +50,11 @@ const Projects = () => {
       <ProjectsLayout>
         <ShortProjectCard image={projectImage1} content={Kodeal} />
         <LongProjectCard image={projectImage2} content={Peachseoga} />
+        <LongProjectCard image={projectImage2} />
+        <ShortProjectCard image={projectImage1} />
       </ProjectsLayout>
     </Container>
   );
-};
+});
 
 export default Projects;

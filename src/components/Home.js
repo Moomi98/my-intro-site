@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { homeImage1 } from "../assets/images/index";
 import { TypeAnimation } from "react-type-animation";
+import { forwardRef } from "react";
 
 const Container = styled.section`
   width: 100%;
@@ -53,9 +54,9 @@ const ImageLayout = styled.img`
   width: 60%;
   height: 60%;
 `;
-const Home = () => {
+const Home = forwardRef((props, ref) => {
   return (
-    <Container>
+    <Container ref={ref}>
       <HomeLayout>
         <IntroLayout>
           <H4Orange>안녕하세요!</H4Orange>
@@ -81,6 +82,6 @@ const Home = () => {
       </HomeLayout>
     </Container>
   );
-};
+});
 
 export default Home;

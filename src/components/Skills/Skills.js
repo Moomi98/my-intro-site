@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Expbar from "./Expbar";
 import useScrollEvent from "../../hooks/useScrollEvent";
+import { forwardRef } from "react";
 const Container = styled.section`
   width: 50%;
   height: 100%;
@@ -51,7 +52,7 @@ const SkillName = styled.p`
   text-align: left;
   line-height: 40px;
 `;
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
     1: useScrollEvent(0.2),
@@ -60,7 +61,7 @@ const Skills = () => {
     4: useScrollEvent(0.2),
   };
   return (
-    <Container>
+    <Container ref={ref}>
       <TitleLayout>
         <Title {...scrollRef[0]}>Skills</Title>
         <Subtitle {...scrollRef[1]}>보유하고 있는 기술 스택입니다.</Subtitle>
@@ -86,6 +87,6 @@ const Skills = () => {
       </SkillsetLayout>
     </Container>
   );
-};
+});
 
 export default Skills;

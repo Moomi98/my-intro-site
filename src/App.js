@@ -6,16 +6,33 @@ import GlobalStyle from "./styles/global";
 import Resume from "./components/Resume";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
+import useMoveScroll from "./hooks/useMoveScroll";
+
 function App() {
+  const scrollRefs = {
+    0: useMoveScroll(),
+    1: useMoveScroll(),
+    2: useMoveScroll(),
+    3: useMoveScroll(),
+    4: useMoveScroll(),
+    length: 5,
+  };
+
+  console.log(scrollRefs);
+
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Home />
-      <About />
-      <Skills />
-      <Resume />
-      <Projects />
+      <Header
+        scrollFunction={Array.from(scrollRefs).map(
+          (ref) => ref.onMoveToElement
+        )}
+      />
+      <Home ref={scrollRefs[0].element} />
+      <About ref={scrollRefs[1].element} />
+      <Skills ref={scrollRefs[2].element} />
+      <Resume ref={scrollRefs[3].element} />
+      <Projects ref={scrollRefs[4].element} />
     </>
   );
 }
