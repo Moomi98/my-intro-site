@@ -1,8 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const blink = keyframes`
+  0% {
+    box-shadow: none;
+  }
+  50%{
+    box-shadow: 0px 0px 1px 2px rgb(255, 123, 125);
+  }
+  100%{
+    box-shadow: none;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   gap: 7px;
   height: 40px;
+`;
+
+const BlinkExpbarLayout = styled.div`
+  width: 20px;
+  background-color: ${(props) => props.color};
+  border-radius: 3px;
+  animation: ${blink} 2s ease-in-out infinite;
 `;
 
 const ExpbarLayout = styled.div`
@@ -17,7 +37,13 @@ const Expbar = ({ rate }) => {
     let index = 0;
 
     for (let i = 0; i < rate; i += 5) {
-      bars.push(<ExpbarLayout color={"#ffbd39"} />);
+      bars.push(
+        i === rate - 5 ? (
+          <BlinkExpbarLayout color={"#ffbd39"} />
+        ) : (
+          <ExpbarLayout color={"#ffbd39"} />
+        )
+      );
       index += 1;
     }
 
