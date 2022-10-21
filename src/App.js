@@ -7,6 +7,8 @@ import Resume from "./components/Resume";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import useMoveScroll from "./hooks/useMoveScroll";
+import StartCover from "./components/StartCover";
+import { useState } from "react";
 
 function App() {
   const scrollRefs = {
@@ -18,21 +20,26 @@ function App() {
     length: 5,
   };
 
-  console.log(scrollRefs);
+  const [startAnimation, setStartAnimation] = useState(true);
 
   return (
     <>
       <GlobalStyle />
-      <Header
-        scrollFunction={Array.from(scrollRefs).map(
-          (ref) => ref.onMoveToElement
-        )}
-      />
-      <Home ref={scrollRefs[0].element} />
-      <About ref={scrollRefs[1].element} />
-      <Skills ref={scrollRefs[2].element} />
-      <Resume ref={scrollRefs[3].element} />
-      <Projects ref={scrollRefs[4].element} />
+      <StartCover setStartAnimation={setStartAnimation} />
+      {startAnimation ? null : (
+        <div style={{ height: "100%" }}>
+          <Header
+            scrollFunction={Array.from(scrollRefs).map(
+              (ref) => ref.onMoveToElement
+            )}
+          />
+          <Home ref={scrollRefs[0].element} />
+          <About ref={scrollRefs[1].element} />
+          <Skills ref={scrollRefs[2].element} />
+          <Resume ref={scrollRefs[3].element} />
+          <Projects ref={scrollRefs[4].element} />
+        </div>
+      )}
     </>
   );
 }
