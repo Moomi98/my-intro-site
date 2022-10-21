@@ -21,11 +21,17 @@ function App() {
   };
 
   const [startAnimation, setStartAnimation] = useState(true);
+  const [showPage, setShowPage] = useState(false);
 
   return (
     <>
       <GlobalStyle />
-      <StartCover setStartAnimation={setStartAnimation} />
+      {!showPage ? (
+        <StartCover
+          setStartAnimation={setStartAnimation}
+          setShowPage={setShowPage}
+        />
+      ) : null}
       {startAnimation ? null : (
         <div style={{ height: "100%" }}>
           <Header

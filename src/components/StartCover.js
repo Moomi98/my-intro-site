@@ -147,12 +147,11 @@ const Divider = styled.div`
   z-index: 101;
 `;
 
-const StartCover = ({ setStartAnimation }) => {
-  const [showText, setShowText] = useState(false);
+const StartCover = ({ setStartAnimation, setShowPage }) => {
   useState(() => {
     setTimeout(() => {
-      setShowText(true);
-    }, 1500);
+      setShowPage(true);
+    }, 3000);
     setTimeout(() => {
       setStartAnimation(false);
     }, 2000);
