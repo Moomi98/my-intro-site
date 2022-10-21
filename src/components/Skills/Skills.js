@@ -4,6 +4,7 @@ import useScrollEvent from "../../hooks/useScrollEvent";
 import { forwardRef } from "react";
 const Container = styled.section`
   width: 50%;
+  height: 100%;
   margin: 0 auto;
   padding-top: 50px;
   display: flex;

@@ -9,7 +9,7 @@ const Container = styled.section`
   padding-top: 50px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 20px;
 `;
@@ -49,7 +49,7 @@ const FlexTextLayout = styled.div`
 `;
 
 const ImageLayout = styled.img`
-  width: 60%;
+  width: 50%;
 `;
 
 const ContentText = styled.p`
@@ -77,8 +77,7 @@ const About = forwardRef((props, ref) => {
       <IntroLayout>
         <Title {...scrollRef[1]}>About Me</Title>
         <Subtitle {...scrollRef[2]}>
-          A small river named Duden flows by their place and supplies it with
-          the necessary regelialia.
+          새로운 것을 좋아하는 개발자, 김정현 입니다.
         </Subtitle>
         <TextLayout {...scrollRef[3]}>
           <FlexTextLayout>
