@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { projectImage1, projectImage2 } from "../../assets/images";
+import { projectImage1, projectImage2 } from "../../assets/index";
 import ShortProjectCard from "./ShortProjectCard";
 import LongProjectCard from "./LongProjectCard";
 import useScrollEvent from "../../hooks/useScrollEvent";

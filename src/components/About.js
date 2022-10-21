@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
-import { homeImage1 } from "../assets/images/index";
+import { emojiImage } from "../assets/index";
 import useScrollEvent from "../hooks/useScrollEvent";
 
 const Container = styled.section`
@@ -50,7 +50,6 @@ const FlexTextLayout = styled.div`
 
 const ImageLayout = styled.img`
   width: 60%;
-  height: 60%;
 `;
 
 const ContentText = styled.p`
@@ -74,7 +73,7 @@ const About = forwardRef((props, ref) => {
 
   return (
     <Container ref={ref}>
-      <ImageLayout src={homeImage1} {...scrollRef[0]} />
+      <ImageLayout src={emojiImage} {...scrollRef[0]} />
       <IntroLayout>
         <Title {...scrollRef[1]}>About Me</Title>
         <Subtitle {...scrollRef[2]}>

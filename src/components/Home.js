@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { homeImage1 } from "../assets/images/index";
+import { emojiVideo, homeImage1 } from "../assets/index";
 import { TypeAnimation } from "react-type-animation";
 import { forwardRef } from "react";
 
@@ -18,6 +18,7 @@ const HomeLayout = styled.div`
 `;
 
 const IntroLayout = styled.div`
+  width: 50%;
   height: 75%;
   margin: auto 0;
   display: flex;
@@ -50,7 +51,7 @@ const H1Orange = styled.h1`
   font-weight: bold;
 `;
 
-const ImageLayout = styled.img`
+const ImageLayout = styled.video`
   width: 60%;
   height: 60%;
 `;
@@ -78,7 +79,9 @@ const Home = forwardRef((props, ref) => {
             <H1White>입니다.</H1White>
           </FlexTextLayout>
         </IntroLayout>
-        <ImageLayout src={homeImage1} />
+        <ImageLayout muted autoPlay loop>
+          <source src={emojiVideo} />
+        </ImageLayout>
       </HomeLayout>
     </Container>
   );
