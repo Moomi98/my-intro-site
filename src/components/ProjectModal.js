@@ -132,6 +132,11 @@ const ContentText = styled.p`
   color: #333;
 `;
 
+const ContentLink = styled.a`
+  font-size: 16px;
+  color: #333;
+`;
+
 const backIconStyle = {
   position: "absolute",
   top: "5px",
@@ -195,7 +200,7 @@ const ProjectModal = (props) => {
           </ContentTypeLayout>
           <ContentTypeLayout>
             <ContentType>🐱 Github</ContentType>
-            <ContentText as={"a"}>{content.github}</ContentText>
+            <ContentLink href={content.github}>{content.github}</ContentLink>
           </ContentTypeLayout>
         </ContentDivideLayout>
 

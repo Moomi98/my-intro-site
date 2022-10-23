@@ -7,7 +7,6 @@ import { Kodeal, Peachseoga } from "../../constants/Projects";
 import { forwardRef } from "react";
 const Container = styled.section`
   width: 75%;
-  height: 100%;
   margin: 0 auto;
   padding-top: 50px;
   display: flex;
@@ -31,7 +30,7 @@ const ProjectsLayout = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 30px;
   height: 100%;
 `;
@@ -50,8 +49,6 @@ const Projects = forwardRef((props, ref) => {
       <ProjectsLayout>
         <ShortProjectCard image={projectImage1} content={Kodeal} />
         <LongProjectCard image={projectImage2} content={Peachseoga} />
-        <LongProjectCard image={projectImage2} />
-        <ShortProjectCard image={projectImage1} />
       </ProjectsLayout>
     </Container>
   );

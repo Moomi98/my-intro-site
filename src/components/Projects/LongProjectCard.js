@@ -19,7 +19,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 25px;
   width: 100%;
-  height: 100%;
+  height: 200px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   background-image: ${(props) => `url(${props.image})`};
