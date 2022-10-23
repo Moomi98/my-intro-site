@@ -59,6 +59,7 @@ const Skills = forwardRef((props, ref) => {
     2: useScrollEvent(0.2),
     3: useScrollEvent(0.2),
     4: useScrollEvent(0.2),
+    5: useScrollEvent(0.2),
   };
   return (
     <Container ref={ref}>
@@ -70,19 +71,19 @@ const Skills = forwardRef((props, ref) => {
       <SkillsetLayout>
         <SkillDetailLayout {...scrollRef[2]}>
           <SkillName>Javascript</SkillName>
-          <Expbar rate={80} />
+          <Expbar rate={80} type={"Javscript"} />
         </SkillDetailLayout>
         <SkillDetailLayout {...scrollRef[3]}>
           <SkillName>React</SkillName>
-          <Expbar rate={70} />
+          <Expbar rate={70} type={"React"} />
         </SkillDetailLayout>
         <SkillDetailLayout {...scrollRef[4]}>
           <SkillName>Typescript</SkillName>
-          <Expbar rate={50} />
+          <Expbar rate={50} type={"Typescript"} />
         </SkillDetailLayout>
         <SkillDetailLayout {...scrollRef[5]}>
           <SkillName>Next.js</SkillName>
-          <Expbar rate={20} />
+          <Expbar rate={20} type={"Nextjs"} />
         </SkillDetailLayout>
       </SkillsetLayout>
     </Container>

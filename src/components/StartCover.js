@@ -117,7 +117,7 @@ const UpperText = styled.div`
   line-height: 100%;
   height: 100%;
   width: 100%;
-  color: rgba(0, 0, 0, 0.25);
+  color: #ffbd39;
   z-index: 101;
 `;
 
@@ -127,7 +127,7 @@ const LowerText = styled.div`
   line-height: 100%;
   height: 100%;
   width: 100%;
-  color: rgba(0, 0, 0, 0.25);
+  color: #ffbd39;
   opacity: 0;
   transform: translate(25%, -240px);
   animation: ${slideLeft} 3s ease-in-out forwards;
