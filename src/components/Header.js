@@ -38,8 +38,9 @@ const Menu = styled.ul`
   font-weight: 600;
   color: white;
   cursor: pointer;
+  margin: 0 auto;
   @media screen and (max-width: 500px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 
