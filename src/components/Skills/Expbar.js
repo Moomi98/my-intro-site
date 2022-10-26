@@ -14,6 +14,20 @@ const blink = keyframes`
     box-shadow: none;
 
   }
+
+`;
+
+const blinkMobile = keyframes`
+  0% {
+    box-shadow: none;
+  }
+  50%{
+    box-shadow: 0px 0px 0px 1px #ffbd39;
+  }
+  100%{
+    box-shadow: none;
+
+  }
 `;
 
 const Container = styled.div`
@@ -29,6 +43,9 @@ const BlinkExpbarLayout = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 3px;
   animation: ${blink} 2s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    animation: ${blinkMobile} 2s ease-in-out infinite;
+  }
 `;
 
 const ExpbarLayout = styled.div`
