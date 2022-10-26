@@ -16,6 +16,10 @@ const HeaderLayout = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const MenuLayout = styled.li`
@@ -24,6 +28,9 @@ const MenuLayout = styled.li`
   gap: 15px;
   justify-content: flex-start;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    gap: 0px;
+  }
 `;
 
 const Menu = styled.ul`
@@ -31,6 +38,9 @@ const Menu = styled.ul`
   font-weight: 600;
   color: white;
   cursor: pointer;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const Logo = styled.p`
@@ -39,6 +49,9 @@ const Logo = styled.p`
   color: white;
   letter-spacing: 1.9px;
   text-align: center;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Header = ({ scrollFunction }) => {
