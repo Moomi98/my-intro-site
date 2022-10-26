@@ -11,6 +11,9 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  @media screen and (max-width: 500px) {
+    height: auto;
+  }
 `;
 
 const Title = styled.p`

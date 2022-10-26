@@ -12,6 +12,9 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   gap: 80px;
+  @media screen and (max-width: 500px) {
+    width: 75%;
+  }
 `;
 
 const TitleLayout = styled.div`
@@ -42,6 +45,9 @@ const SkillDetailLayout = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const SkillName = styled.p`
