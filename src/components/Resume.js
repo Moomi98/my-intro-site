@@ -31,6 +31,10 @@ const ResumeLayout = styled.div`
   gap: 30px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ResumeWrapper = styled.div`
@@ -64,6 +68,10 @@ const Date = styled.p`
   font-weight: 900;
   font-size: 26px;
   color: #ffbd39;
+
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 const ResumeWrapH2 = styled.h2`
