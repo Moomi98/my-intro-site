@@ -1,7 +1,8 @@
 import styled, { keyframes } from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useScrollEvent from "../../hooks/useScrollEvent";
 import ProjectModal from "../ProjectModal";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const hoverEnter = keyframes`
     from{
@@ -53,10 +54,17 @@ const LongProjectCard = (props) => {
   const [hover, setHover] = useState(false);
   const [modal, setModal] = useState(false);
   const scrollRef = useScrollEvent(0.2);
+  const windowSize = useWindowSize();
 
   const closeModal = () => {
     setModal(false);
   };
+
+  useEffect(() => {
+    if (windowSize < 500) {
+      setHover(true);
+    }
+  }, [windowSize]);
 
   return (
     <>
@@ -64,7 +72,9 @@ const LongProjectCard = (props) => {
         {...scrollRef}
         image={props.image}
         onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onMouseLeave={() =>
+          windowSize < 500 ? setHover(true) : setHover(false)
+        }
       >
         {hover ? (
           <>

@@ -8,7 +8,7 @@ import { forwardRef } from "react";
 const Container = styled.section`
   width: 75%;
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,6 +33,9 @@ const ProjectsLayout = styled.div`
   grid-template-rows: 1fr 1fr;
   gap: 30px;
   height: 100%;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Projects = forwardRef((props, ref) => {
