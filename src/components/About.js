@@ -12,6 +12,9 @@ const Container = styled.section`
   justify-content: space-around;
   align-items: center;
   gap: 20px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.p`
@@ -50,6 +53,9 @@ const FlexTextLayout = styled.div`
 
 const ImageLayout = styled.img`
   width: 50%;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const ContentText = styled.p`
