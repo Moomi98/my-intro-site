@@ -61,7 +61,7 @@ const ShortProjectCard = (props) => {
   useEffect(() => {
     if (windowSize && windowSize < 500) {
       setHover(true);
-    }
+    } else setHover(false);
   }, [windowSize]);
 
   return (
