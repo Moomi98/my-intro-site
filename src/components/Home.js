@@ -57,7 +57,7 @@ const H1White = styled.h1`
   font-weight: bold;
   @media screen and (max-width: 500px) {
     display: block;
-    font-size: 40px;
+    font-size: 9vw;
   }
 `;
 
@@ -67,13 +67,13 @@ const H1Orange = styled.h1`
   font-weight: bold;
   @media screen and (max-width: 500px) {
     display: block;
-    font-size: 40px;
+    font-size: 10vw;
   }
 `;
 
 const TypingAnimation = styled.div`
   > h1 {
-    font-size: ${(props) => (props.windowSize > 500 ? " 60px" : "40px")};
+    font-size: ${(props) => (props.windowSize > 500 ? " 60px" : "10vw")};
     font-weight: bold;
     color: white;
   }
