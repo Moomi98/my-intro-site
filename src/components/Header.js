@@ -23,6 +23,7 @@ const HeaderLayout = styled.div`
 `;
 
 const MenuLayout = styled.li`
+  width: 100%;
   height: 100%;
   display: flex;
   gap: 15px;
@@ -41,6 +42,7 @@ const Menu = styled.ul`
   margin: 0 auto;
   @media screen and (max-width: 500px) {
     font-size: 15px;
+    padding: 0px;
   }
 `;
 
