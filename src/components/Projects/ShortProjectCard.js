@@ -40,8 +40,9 @@ const ProjectDetailLayout = styled.div`
 
 const ProjectTitle = styled.p`
   position: absolute;
-  top: 45%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 25px;
   font-weight: 700;
   color: white;
