@@ -23,13 +23,13 @@ const HeaderLayout = styled.div`
 `;
 
 const MenuLayout = styled.li`
-  width: 100%;
   height: 100%;
   display: flex;
   gap: 15px;
   justify-content: flex-start;
   align-items: center;
   @media screen and (max-width: 500px) {
+    width: 100%;
     gap: 0px;
   }
 `;
@@ -47,6 +47,8 @@ const Menu = styled.ul`
 `;
 
 const Logo = styled.p`
+  display: block;
+  width: 100px;
   font-size: 24px;
   font-weight: bold;
   color: white;
