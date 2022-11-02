@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { emojiVideo } from "../assets/index";
 import { TypeAnimation } from "react-type-animation";
 import { forwardRef } from "react";
 import useWindowSize from "../hooks/useWindowSize";
-import { useEffect, useState } from "react";
 
 const Container = styled.section`
   width: 100%;
@@ -18,7 +17,7 @@ const HomeLayout = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column;
   }
 `;
@@ -30,7 +29,7 @@ const IntroLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 `;
@@ -39,7 +38,7 @@ const FlexTextLayout = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 `;
@@ -51,21 +50,23 @@ const H4Orange = styled.h4`
 `;
 
 const H1White = styled.h1`
-  font-size: 60px;
+  font-size: ${(props) => (props.windowSize > 960 ? "3.5vw" : "10vw")};
+  min-width: 120px;
 
   color: white;
   font-weight: bold;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     display: block;
     font-size: 9vw;
   }
 `;
 
 const H1Orange = styled.h1`
-  font-size: 60px;
+  min-width: 120px;
+  font-size: ${(props) => (props.windowSize > 960 ? "3.5vw" : "10vw")};
   color: #ffbd39;
   font-weight: bold;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     display: block;
     font-size: 10vw;
   }
@@ -73,9 +74,20 @@ const H1Orange = styled.h1`
 
 const TypingAnimation = styled.div`
   > h1 {
-    font-size: ${(props) => (props.windowSize > 500 ? " 60px" : "10vw")};
+    font-size: ${(props) => (props.windowSize > 960 ? "3.5vw" : "10vw")};
     font-weight: bold;
     color: white;
+  }
+`;
+
+const Video = styled.video`
+  width: ${(props) =>
+    css`
+      ${props.windowSize / 2 - 30}px
+    `};
+
+  @media screen and (max-width: 960px) {
+    width: 100vw;
   }
 `;
 
@@ -103,13 +115,13 @@ const Home = forwardRef((props, ref) => {
           </TypingAnimation>
 
           <FlexTextLayout>
-            <H1Orange>김정현</H1Orange>
-            <H1White>입니다.</H1White>
+            <H1Orange windowSize={windowSize}>김정현</H1Orange>
+            <H1White windowSize={windowSize}>입니다.</H1White>
           </FlexTextLayout>
         </IntroLayout>
-        <video muted autoPlay loop>
+        <Video muted autoPlay loop windowSize={windowSize}>
           <source src={emojiVideo} />
-        </video>
+        </Video>
       </HomeLayout>
     </Container>
   );
