@@ -12,6 +12,7 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   gap: 80px;
+
   @media screen and (max-width: 500px) {
     width: 75%;
   }
@@ -45,7 +46,7 @@ const SkillDetailLayout = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
   }
 `;
