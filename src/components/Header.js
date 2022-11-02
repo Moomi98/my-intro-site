@@ -16,7 +16,8 @@ const HeaderLayout = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 850px) {
+    justify-content: center;
     width: 100%;
     margin: 0;
   }
@@ -54,7 +55,7 @@ const Logo = styled.p`
   color: white;
   letter-spacing: 1.9px;
   text-align: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 610px) {
     display: none;
   }
 `;
