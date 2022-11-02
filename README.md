@@ -2,7 +2,9 @@
 
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
 
-#### 배포용 웹사이트 : <a href="https://moomi98.github.io/my-intro-site/"><img src="https://img.shields.io/badge/Kodeal-4285F4?style=for-the-badge&logo=Google Chrome&logoColor=white"></a> (모바일 화면은 현재 최적화 진행 중 입니다.)
+#### 배포용 웹사이트
+
+<a href="https://moomi98.github.io/my-intro-site/"><img src="https://img.shields.io/badge/Kodeal-4285F4?style=for-the-badge&logo=Google Chrome&logoColor=white"></a> (모바일 화면은 현재 **90%** 최적화 진행 중 입니다.)
 
 ## 🎈 소개
 저의 기본 정보 및 경험과 프로젝트 이력 등을 소개하는 웹 포트폴리오 사이트 입니다.
