@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import useWindowSize from "../hooks/useWindowSize";
 
 const slideRight = keyframes`
   0% {
@@ -112,17 +113,24 @@ const Lower = styled.div`
 `;
 
 const UpperText = styled.div`
-  font-size: 34.286em;
+  font-size: 34.286rem;
   font-weight: 700;
   line-height: 100%;
   height: 100%;
   width: 100%;
   color: #ffbd39;
   z-index: 101;
+
+  @media screen and (max-width: 500px) {
+    font-size: calc(30vw + 18rem);
+  }
+  @media screen and (max-width: 400px) {
+    font-size: calc(30vw + 16rem);
+  }
 `;
 
 const LowerText = styled.div`
-  font-size: 34.286em;
+  font-size: 34.286rem;
   font-weight: 700;
   line-height: 100%;
   height: 100%;
@@ -131,7 +139,16 @@ const LowerText = styled.div`
   opacity: 0;
   transform: translate(25%, -240px);
   animation: ${slideLeft} 3s ease-in-out forwards;
-  z-index: 1101;
+  z-index: 101;
+
+  @media screen and (max-width: 500px) {
+    font-size: calc(30vw + 18rem);
+  }
+  @media screen and (max-width: 400px) {
+    transform: translate(25%, 0px);
+
+    font-size: calc(30vw + 16rem);
+  }
 `;
 
 const Divider = styled.div`
@@ -148,6 +165,8 @@ const Divider = styled.div`
 `;
 
 const StartCover = ({ setStartAnimation, setShowPage }) => {
+  const windowSize = useWindowSize();
+
   useState(() => {
     setTimeout(() => {
       setShowPage(true);
@@ -160,10 +179,14 @@ const StartCover = ({ setStartAnimation, setShowPage }) => {
     <>
       <Container>
         <Upper>
-          <UpperText>Hello</UpperText>
+          <UpperText windowSize={windowSize}>
+            {windowSize > 1200 ? "Hello" : "Hi"}
+          </UpperText>
         </Upper>
         <Lower>
-          <LowerText>Hello</LowerText>
+          <LowerText windowSize={windowSize}>
+            {windowSize > 1200 ? "Hello" : "Hi"}
+          </LowerText>
         </Lower>
       </Container>
       <Divider />
