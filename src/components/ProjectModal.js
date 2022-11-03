@@ -87,7 +87,7 @@ const ProjectDetailLayout = styled.div`
         ? scaleBack
         : scaleUp} 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards
     `};
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     width: 90%;
   }
 `;
@@ -115,7 +115,7 @@ const ContentTypeLayout = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 960px) {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
