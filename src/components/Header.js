@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import useHeaderNavigation from "../hooks/useHeaderNavigation";
 
 const Container = styled.div`
   width: 100%;
@@ -60,8 +61,16 @@ const Logo = styled.p`
   }
 `;
 
-const Header = ({ scrollFunction }) => {
+const Header = ({ scrollFunction, refs }) => {
   const menuList = ["Home", "About", "Skills", "Resume", "Projects"];
+  const navigationRefs = {
+    0: useHeaderNavigation(refs[0]),
+    1: useHeaderNavigation(refs[1]),
+    2: useHeaderNavigation(refs[2]),
+    3: useHeaderNavigation(refs[3]),
+    4: useHeaderNavigation(refs[4]),
+    length: 5,
+  };
 
   return (
     <Container>
@@ -69,7 +78,9 @@ const Header = ({ scrollFunction }) => {
         <Logo>김정현</Logo>
         <MenuLayout>
           {menuList.map((menu, index) => (
-            <Menu onClick={scrollFunction[index]}>{menu}</Menu>
+            <Menu {...navigationRefs[index]} onClick={scrollFunction[index]}>
+              {menu}
+            </Menu>
           ))}
         </MenuLayout>
       </HeaderLayout>

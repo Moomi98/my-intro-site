@@ -38,6 +38,7 @@ function App() {
             scrollFunction={Array.from(scrollRefs).map(
               (ref) => ref.onMoveToElement
             )}
+            refs={Array.from(scrollRefs).map((ref) => ref.element)}
           />
           <Home ref={scrollRefs[0].element} />
           <About ref={scrollRefs[1].element} />
