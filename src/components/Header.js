@@ -78,7 +78,11 @@ const Header = ({ scrollFunction, refs }) => {
         <Logo>김정현</Logo>
         <MenuLayout>
           {menuList.map((menu, index) => (
-            <Menu {...navigationRefs[index]} onClick={scrollFunction[index]}>
+            <Menu
+              key={index}
+              {...navigationRefs[index]}
+              onClick={scrollFunction[index]}
+            >
               {menu}
             </Menu>
           ))}

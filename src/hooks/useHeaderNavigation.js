@@ -6,7 +6,6 @@ const useHeaderNavigation = (target) => {
 
   const handleScroll = useCallback(([entry]) => {
     const { current } = headerRef;
-    console.log(targetDOM.current);
 
     if (entry.isIntersecting) {
       current.style.color = "#ffbd39";

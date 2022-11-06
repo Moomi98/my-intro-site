@@ -80,12 +80,14 @@ const Expbar = ({ type, rate }) => {
         bars.push(
           <div style={{ position: "relative", height: "100%" }}>
             <BlinkExpbarLayout
+              key={i}
               onMouseEnter={tooltipOpen}
               onMouseLeave={tooltipClose}
               color={"#ffbd39"}
             />
             {tooltip ? (
               <Tooltip
+                key={i}
                 closeAnimation={tooltipCloseAnimation}
                 contents={skillDetails[type]}
               />
@@ -93,12 +95,12 @@ const Expbar = ({ type, rate }) => {
           </div>
         );
       } else {
-        bars.push(<ExpbarLayout color={"#ffbd39"} />);
+        bars.push(<ExpbarLayout key={i} color={"#ffbd39"} />);
       }
     }
 
     for (let i = 0; i < 100 - rate; i += 5) {
-      bars.push(<ExpbarLayout color={"#aaa"} />);
+      bars.push(<ExpbarLayout key={100 - i} color={"#aaa"} />);
       index += 1;
     }
 
