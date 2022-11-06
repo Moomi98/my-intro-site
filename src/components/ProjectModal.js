@@ -162,6 +162,17 @@ const ProjectModal = (props) => {
     }
   }, [closeAnimation]);
 
+  useEffect(() => {
+    const closeModal = (event) => {
+      if (event.keyCode === 27) {
+        setCloseAnimation(true);
+      }
+    };
+    window.addEventListener("keydown", closeModal);
+
+    return () => window.removeEventListener("keydown", closeModal);
+  }, []);
+
   const getMyDevelop = () => {
     const contents = [];
 
