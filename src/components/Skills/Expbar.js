@@ -85,13 +85,6 @@ const Expbar = ({ type, rate }) => {
               onMouseLeave={tooltipClose}
               color={"#ffbd39"}
             />
-            {tooltip ? (
-              <Tooltip
-                key={i}
-                closeAnimation={tooltipCloseAnimation}
-                contents={skillDetails[type]}
-              />
-            ) : null}
           </div>
         );
       } else {
@@ -106,6 +99,16 @@ const Expbar = ({ type, rate }) => {
 
     return bars;
   };
-  return <Container>{getExpRate()}</Container>;
+  return (
+    <Container>
+      {getExpRate()}{" "}
+      {tooltip ? (
+        <Tooltip
+          closeAnimation={tooltipCloseAnimation}
+          contents={skillDetails[type]}
+        />
+      ) : null}
+    </Container>
+  );
 };
 export default Expbar;
