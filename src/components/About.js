@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 import { emojiImage } from "../assets/index";
 import useScrollEvent from "../hooks/useScrollEvent";
+import { link } from "../constants/About";
 
 const Container = styled.section`
   width: 75%;
@@ -69,6 +70,30 @@ const ElementText = styled.p`
   min-width: 100px;
 `;
 
+const ButtonLayout = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: center;
+`;
+
+const LinkButton = styled.button`
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  border: 3px solid #ffbd39;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #ffbd39;
+    color: black;
+  }
+`;
+
 const About = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
@@ -102,6 +127,15 @@ const About = forwardRef((props, ref) => {
             <ElementText>학교 :</ElementText>
             <ContentText>한국공학대학교 컴퓨터공학과</ContentText>
           </FlexTextLayout>
+          <ButtonLayout>
+            <a href={link.github} target="_blabk">
+              <LinkButton>Github</LinkButton>
+            </a>
+
+            <a href={link.blog} target="_blank">
+              <LinkButton>Blog</LinkButton>
+            </a>
+          </ButtonLayout>
         </TextLayout>
       </IntroLayout>
     </Container>
