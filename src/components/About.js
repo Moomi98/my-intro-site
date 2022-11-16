@@ -1,8 +1,13 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef, useState } from "react";
 import styled from "styled-components";
 import { emojiImage } from "../assets/index";
 import useScrollEvent from "../hooks/useScrollEvent";
 import { link } from "../constants/About";
+import { IoCopy } from "react-icons/io5";
+import { copyToClipBoard } from "../utils/utils";
+import Toast from "./Toast";
+
+import { AiOutlineCheck } from "react-icons/ai";
 
 const Container = styled.section`
   width: 75%;
@@ -94,12 +99,41 @@ const LinkButton = styled.button`
   }
 `;
 
+const EmailCopyLayout = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const copyButton = {
+  color: "gray",
+  cursor: "pointer",
+};
+
 const About = forwardRef((props, ref) => {
   const scrollRef = {
     0: useScrollEvent(0.2),
     1: useScrollEvent(0.2),
     2: useScrollEvent(0.2),
     3: useScrollEvent(0.2),
+  };
+
+  const emailRef = useRef();
+  const [successCopy, setSuccessCopy] = useState(false);
+
+  const onCopySuccess = () => {
+    setSuccessCopy(true);
+    setTimeout(() => {
+      setSuccessCopy(false);
+    }, 3000);
+  };
+
+  const onFailSuccess = () => {
+    setSuccessCopy(false);
+  };
+  const copyEmail = () => {
+    copyToClipBoard(emailRef.current.innerText, onCopySuccess, onFailSuccess);
   };
 
   return (
@@ -121,7 +155,20 @@ const About = forwardRef((props, ref) => {
           </FlexTextLayout>
           <FlexTextLayout>
             <ElementText>Email :</ElementText>
-            <ContentText>kymkjh2002@gmail.com</ContentText>
+            <ContentText ref={emailRef}>kymkjh2002@gmail.com</ContentText>
+            <EmailCopyLayout>
+              {successCopy ? (
+                <Toast
+                  content={"이메일이 클립보드에 저장되었습니다."}
+                  duration={3}
+                />
+              ) : null}
+              {successCopy ? (
+                <AiOutlineCheck size={15} color="#1f9e1f" />
+              ) : (
+                <IoCopy size={15} style={copyButton} onClick={copyEmail} />
+              )}
+            </EmailCopyLayout>
           </FlexTextLayout>
           <FlexTextLayout>
             <ElementText>학교 :</ElementText>
