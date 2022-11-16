@@ -9,7 +9,6 @@ import Skills from "./components/Skills/Skills";
 import useMoveScroll from "./hooks/useMoveScroll";
 import StartCover from "./components/StartCover";
 import { useState } from "react";
-import Messanger from "./components/Messanger/Messanger";
 
 function App() {
   const scrollRefs = {
@@ -48,8 +47,6 @@ function App() {
           <Projects ref={scrollRefs[4].element} />
         </div>
       )}
-
-      <Messanger />
     </>
   );
 }
