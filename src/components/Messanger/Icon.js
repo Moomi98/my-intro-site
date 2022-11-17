@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { AiFillMessage } from "react-icons/ai";
 import styled from "styled-components";
+import Messanger from "./Messanger";
 
 const Container = styled.div`
   position: fixed;
@@ -21,10 +23,14 @@ const Container = styled.div`
 `;
 
 const Icon = () => {
+  const [modal, setModal] = useState(false);
   return (
-    <Container>
-      <AiFillMessage size={40} />
-    </Container>
+    <>
+      <Container onClick={() => setModal(true)}>
+        <AiFillMessage size={40} />
+      </Container>
+      {modal && <Messanger setModal={setModal} />}
+    </>
   );
 };
 
