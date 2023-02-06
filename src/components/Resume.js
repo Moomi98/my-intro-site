@@ -107,6 +107,16 @@ const Resume = forwardRef((props, ref) => {
       </Subtitle>
       <ResumeLayout>
         <ResumeWrapper {...scrollRef[2]}>
+          <Date>2023.01.30 ~ 2023.02.10</Date>
+          <ResumeWrapH2>React Education Teacher</ResumeWrapH2>
+          <Position>Elice</Position>
+          <Content>
+            온라인 교육 플랫폼 엘리스의 부트캠프에서 React 코치로
+            참가하였습니다.
+          </Content>
+          <Content>사용 기술 : Javascript, React</Content>
+        </ResumeWrapper>
+        <ResumeWrapper {...scrollRef[3]}>
           <Date>2022.08.01 ~ 2022.08.26</Date>
           <ResumeWrapH2>Frontend Intern</ResumeWrapH2>
           <Position>Naver</Position>
@@ -116,20 +126,16 @@ const Resume = forwardRef((props, ref) => {
           </Content>
           <Content>사용 기술 : Javascript, Vue, Vuex</Content>
         </ResumeWrapper>
-        <ResumeWrapper {...scrollRef[3]}>
-          <Date>2021.12.20- ~ 2022.02.16</Date>
+        <ResumeWrapper {...scrollRef[4]}>
+          <Date>2021.12.20 ~ 2022.02.16</Date>
           <ResumeWrapH2>Frontend Intern</ResumeWrapH2>
           <Position>Frigatebird</Position>
           <Content>
             전자책 구독 플랫폼 개발에 8주간 참여하여 프로필, 메인페이지 작업 및
             기능 개선을 진행했습니다.
           </Content>
-          <Content>사용 기술 : Javscript, React, Redux</Content>
+          <Content>사용 기술 : Javascript, React, Redux</Content>
         </ResumeWrapper>
-
-        <ResumeWrapperNotUpdated {...scrollRef[4]}>
-          <ResumeWrapH2>To Be Updated...</ResumeWrapH2>
-        </ResumeWrapperNotUpdated>
         <ResumeWrapperNotUpdated {...scrollRef[5]}>
           <ResumeWrapH2>To Be Updated...</ResumeWrapH2>
         </ResumeWrapperNotUpdated>
