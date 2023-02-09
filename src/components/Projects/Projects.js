@@ -3,7 +3,7 @@ import { projectImage1, projectImage2 } from "../../assets/index";
 import ShortProjectCard from "./ShortProjectCard";
 import LongProjectCard from "./LongProjectCard";
 import useScrollEvent from "../../hooks/useScrollEvent";
-import { Kodeal, Peachseoga } from "../../constants/Projects";
+import { DoDoList, Kodeal, Peachseoga } from "../../constants/Projects";
 import { forwardRef } from "react";
 const Container = styled.section`
   width: 75%;
@@ -50,7 +50,8 @@ const Projects = forwardRef((props, ref) => {
         진행했거나 진행 중인 프로젝트를 소개합니다.
       </Subtitle>
       <ProjectsLayout>
-        <ShortProjectCard image={projectImage1} content={Kodeal} />
+        <LongProjectCard image={projectImage1} content={DoDoList} />
+        <ShortProjectCard image={projectImage2} content={Kodeal} />
         <LongProjectCard image={projectImage2} content={Peachseoga} />
       </ProjectsLayout>
     </Container>

@@ -79,7 +79,7 @@ const ShortProjectCard = (props) => {
         {hover ? (
           <>
             <ProjectDetailLayout />
-            <ProjectTitle>Kodeal</ProjectTitle>
+            <ProjectTitle>{props.content.title}</ProjectTitle>
           </>
         ) : null}
       </Container>

@@ -80,7 +80,7 @@ const LongProjectCard = (props) => {
         {hover ? (
           <>
             <ProjectDetailLayout onClick={() => setModal(true)} />
-            <ProjectTitle>Peachseoga</ProjectTitle>
+            <ProjectTitle>{props.content.title}</ProjectTitle>
           </>
         ) : null}
       </Container>
